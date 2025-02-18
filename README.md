@@ -1,6 +1,10 @@
 # Análise de variações de temperatura média mensal no mundo
 
-**Autores:** Leo.
+**Autores:** 
+
+1. Leo
+1. Yago
+1. Arthur 
 
 ## Abstract
 
