@@ -8,19 +8,25 @@
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
 \usepackage[round,authoryear,sort]{natbib}
+\usepackage{notomath}
+
+\newcommand{\Title}{Análise de variação de temperatura dos últimos cinco anos.}
+
+\input{paises.tex}
+
 
 % Corpo
 % Onde a gente escreve o texto
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\title{Análise de variação de temperatura dos últimos cinco anos.}
+\title{\Title}
 \author{Leonardo Uieda, Yago Moreira Castro, Arthur Siqueira de Macêdo}
 
 \maketitle
 
 \begin{abstract}
-Meu super hiper resumo.
+Meu super hiper resumo. \Title
 
 \end{abstract}
 
@@ -60,7 +66,8 @@ o ajuste da reta com o método dos mínimos quadrados como descrito na seção \
 \section{Resultados}
 \label{sec:resultados}
 
-Analisamos os dados de 225 países, São muitos para listar aqui. Confie em mim.
+Analisamos os dados de 225 países.
+Os países foram: \Paises.
 
 \begin{figure}[!htb] %h = here, t = top, b = bottom, ! = prioridade
 	\centering

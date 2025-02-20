@@ -3,15 +3,18 @@
 # alvo: pre-requisito1 pre-requisito2 ...
 #	 comandos que usam os pré-requisitos para gerar o alvo
 
-all: resultados/variacao_temperatura.csv resultados/numero_de_dados.txt figuras/variacao_temperatura.png paper/paper.pdf
+all: resultados/variacao_temperatura.csv resultados/numero_de_dados.txt figuras/variacao_temperatura.png paper/paper.pdf 
 	# Nenhum comando, alvo ficticio que gera todos os alvos no makefile
 
 clean:
-	rm -rv resultados dados figuras paper/paper.pdf 
+	rm -rv resultados dados figuras paper/paper.pdf paper/paises.tex 
 	# Limpa as pastas geradas pelo make
 
-paper/paper.pdf: paper/paper.tex figuras/variacao_temperatura.png
+paper/paper.pdf: paper/paper.tex figuras/variacao_temperatura.png paper/paises.tex 
 	tectonic -X compile paper/paper.tex
+	
+paper/paises.tex: dados/temperature.zip code/lista_paises.py
+	python code/lista_paises.py dados/temperatura/ > paper/paises.tex
 
 figuras/variacao_temperatura.png: code/plota_dados.py resultados/variacao_temperatura.csv 
 		mkdir -p figuras
@@ -20,7 +23,6 @@ figuras/variacao_temperatura.png: code/plota_dados.py resultados/variacao_temper
 resultados/variacao_temperatura.csv: dados/temperature-data.zip code/variacao_temperatura_todos.sh
 	mkdir -p resultados/
 	bash code/variacao_temperatura_todos.sh > resultados/variacao_temperatura.csv
-	
 	
 resultados/numero_de_dados.txt: dados/temperature-data.zip 
 	mkdir -p resultados/
