@@ -1,5 +1,6 @@
-#Lista de arquivos para o git ignorar
+# Lista de arquivos para o git ignorar
 
 dados
 resultados
 figuras
+*.pdf
