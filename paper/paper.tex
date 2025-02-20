@@ -7,7 +7,7 @@
 
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
-
+\usepackage[round,authoryear,sort]{natbib}
 
 % Corpo
 % Onde a gente escreve o texto
@@ -30,6 +30,11 @@ Isso vai ser a minha introdução.
 Outra frase da introdução.
 
 Esse já será outro parágrafo da introdução.
+
+Trabalhos anteriores bem legais fizeram coisas parecidas
+\citep{Hansen2010}.
+
+Isso foi analisado primeiro por \citet{Hansen2010}.
 
 \section{Metodologia}
 \label{sec:metodologia}
@@ -67,6 +72,11 @@ Analisamos os dados de 225 países, São muitos para listar aqui. Confie em mim.
 	}
 \label{fig:varia_temp}
 \end{figure} 
-
 Os resultados da análise de variação de temperatura estão na figura \ref{fig:varia_temp}.
+
+% Usar o doi2bib.org para referencias
+\bibliographystyle{apalike}
+\bibliography{referencias.bib}
+
+
 \end{document}
